@@ -379,8 +379,9 @@ public class Building_MiningShaft : Building
         var storages = this.CellsAdjacent8WayAndInside().Where(vec3 => vec3.GetFirstThing<Building_Storage>(Map) != null);
         if (storages.Any())
         {
-            var name = UndergroundManager.GetLayerName(transferLevel);
-            if (transferLevel == 0){
+            var name = UndergroundManager?.GetLayerName(transferLevel);
+            if (transferLevel == 0 | transferLevel == -1)
+            {
                 label = "Deeprim.TransferLevelNone".Translate();
             }
             else if (name != ""){

@@ -43,6 +43,7 @@ public class Building_SpawnedLift : Building
     {
         base.ExposeData();
         Scribe_Values.Look(ref depth, "depth");
+        Scribe_Values.Look(ref transferLevel, "transferLevel");
         Scribe_References.Look(ref parentDrill, "parentDrill");
         Scribe_References.Look(ref surfaceMap, "surfaceMap");
     }
